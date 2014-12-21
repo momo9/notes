@@ -5,7 +5,7 @@
 - init 进程：PID 为 1 的进程
 - 进程组、会话
 
-  [[./group&session.png]]
+  [[./group.png]]
 
 * 终端登录过程
 

@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=gbk"/>
 <meta name="title" content="进程关系"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2014-12-21T16:58+0800"/>
+<meta name="generated" content="2014-12-21T16:39+0800"/>
 <meta name="author" content=""/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -129,8 +129,6 @@ for the JavaScript code in this tag.
 <li><a href="#sec-2-2">2.2 网络</a></li>
 </ul>
 </li>
-<li><a href="#sec-3">3 shell 执行程序</a></li>
-<li><a href="#sec-4">4 孤儿进程组</a></li>
 </ul>
 </div>
 </div>
@@ -146,7 +144,7 @@ for the JavaScript code in this tag.
 <li>进程组、会话
 
 <p>
-  <img src="./group.png"  alt="./group.png" />
+  <img src="./group&amp;session.png"  alt="./group&amp;session.png" />
 </p></li>
 </ul>
 
@@ -200,51 +198,15 @@ for the JavaScript code in this tag.
 </ol>
 
 
-</div>
-</div>
-
-</div>
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> shell 执行程序</h2>
-<div class="outline-text-2" id="text-3">
-
-
-<ol>
-<li>shell fork，得到进程 a
-</li>
-<li>如果是 bash，对于 pipe 中的每条命令，a 都 fork 一个子进程，并 exec
-</li>
-<li>如果是 sh，对于 pipe 中除最后一条命令以外的命令，a 都 fork 一个子进程 exec，然后 a 自己 exec 最后一条命令
-</li>
-</ol>
 
 
 </div>
-
-</div>
-
-<div id="outline-container-4" class="outline-2">
-<h2 id="sec-4"><span class="section-number-2">4</span> 孤儿进程组</h2>
-<div class="outline-text-2" id="text-4">
-
-
-<p>
-<b>组内的所有成员都满足，要么父进程在组内，要么父进程在会话外，总之没有一个父进程在同会话的其它组内</b>
-</p>
-<ol>
-<li>向孤儿进程组中所有处于停止状态的进程发送挂断信号
-</li>
-<li>然后再发送继续信号
-</li>
-</ol>
-
 </div>
 </div>
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2014-12-21T16:58+0800</p>
+<p class="date">Date: 2014-12-21T16:39+0800</p>
 <p class="author">Author: </p>
 <p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.3f with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 24</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
