@@ -1,0 +1,15 @@
+#+title: 信号
+
+* 概念
+
+- core：core dump 时的调试文件
+- kill：不是杀死进程，而是给信号
+- sleep 与 pause：有信号时会被唤醒（然后不会再继续被挂起了！）
+- EINTR：阻塞时有信号产生
+
+* SIGCHLD
+
+1. 子进程结束时，会变为 zombie，供父进程善后
+2. 如果父进程不 wait，zombie 就会一直存在，直到父进程结束
+3. 变 zombie 时，会发送 SIGCHLD 信号
+4. 如果忽略 SIGCHLD 的话，子进程结束不会变 zombie （Linux 等是这样，但不是所有 unix 都这样）
