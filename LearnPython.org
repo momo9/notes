@@ -1,0 +1,16 @@
+#+title: Python Tutorial
+
+* Modules
+
+1. =import *= will not import what starts with _underscore_
+2. =sys.path= is the module search path
+3. =__init__.py= can be just an empty file
+4. =__all__= in =__init__= defines what will be imported when =import *=
+
+* Input and Output
+
+1. use =with= when dealing with file objects
+
+* Errors and Exceptions
+
+1. =try ... except= statement has =else= clause
