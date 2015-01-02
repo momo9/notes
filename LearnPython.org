@@ -14,3 +14,20 @@
 * Errors and Exceptions
 
 1. =try ... except= statement has =else= clause
+
+* Classes
+
+#+begin_src python
+class MyClass:
+    i = 10
+
+o = MyClass()
+#+end_src
+
+1. =o.i= 可以访问类变量 =i= ，但访问的似乎只是引用的副本，用 =.= 可以修改，但不能赋值
+2. =MyClass.i= 访问的是类变量 =i= ，可以赋值
+
+* Scope
+
+1. In functions, only copy of global reference can be accessed (act as global variables are parameters of the function)
+2. Inner functions are used for closures
