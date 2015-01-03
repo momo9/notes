@@ -1,0 +1,64 @@
+* assert & test
+
+#+begin_src ruby
+assert true, "msg"
+
+expected = 2
+actual = 1 + 1
+assert_equal expected, actual
+
+asser_match /pattern/, "msg"
+#+end_src
+
+* exception
+
+#+begin_src ruby
+begin
+  <expression>
+rescue Exception => ex
+  <handle>
+end
+#+end_src
+
+* nil
+
+- =nil= is an object
+- =nil.nil?= is =true=
+
+* object
+
+- _everything is object_
+- object's id is a =Fixnum=
+- according to an integer /n/, =n.object_id= is /2n+1/
+
+* equal
+
+- ~==~: compare the value, usually overridden
+- =equal?=: never overridden, =true= only when two objects have _the same id_
+
+* array
+
+1. =a[x, y]=: =y= elements from =a[x]=
+2. if ~x == a.length - 1~, =a[x, y]= is =[]=
+3. if ~x > a.length - 1~, =a[x, y]= is =nil=
+4. a, b = [1, 2] => a: 1, b: 2
+5. a, b = [1, 2, 3] => a: 1, b: 2
+6. a, *b = [1, 2, 3] => a: 1, b: [2, 3]
+7. a, b = ~[1]~ => a: 1, b: nil
+8. a, = [1, 2] => a: 1
+
+* hash
+
+#+begin_src ruby
+h = {:one => "uno"}
+h[:two] # nil
+h.fetch(:two) # raise KeyError
+
+h2 = Hash.new "default"
+h2[:two] # "default"
+#+end_src
+
+1. =h.keys.class= and =h.values.class= are all =Array=
+2. _default object of hash is the same object_
+3. default object can be a block
+
