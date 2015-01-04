@@ -26,8 +26,52 @@ o = MyClass()
 
 1. =o.i= 可以访问类变量 =i= ，但访问的似乎只是引用的副本，用 =.= 可以修改，但不能赋值
 2. =MyClass.i= 访问的是类变量 =i= ，可以赋值
+3. =self= is not a keyword in Python, only convention
+
+* Inherit
+
+1. If an attribute is not found, the base class will be searched: depth-first, left-to-right for _old-style class_
 
 * Scope
 
 1. In functions, only copy of global reference can be accessed (act as global variables are parameters of the function)
 2. Inner functions are used for closures
+3. Nothing in Python makes it possible to hide data, data hiding is based on convention
+
+* Iterator
+
+1. Define =__iter__()= which returns an object with a =next()= method (can be =self=)
+
+* Generator
+
+1. Act as an iterable object
+2. =yield= when =return= is needed
+
+* Performance Measurement: =timeit=
+
+* Weak References
+
+1. _Python uses reference counting for memory management and garbage collection to eliminate cycles_
+2. Tracking means reference, so the object cannot be recycled
+3. Weak reference will not protect objects from being recycled
+
+* Abstract Base Class: =abc=
+
+* Context Manager
+
+1. Define =__enter__()= and =__exit__()=, to support =with= statement
+
+* Easier to Ask Forgiveness Than Permission
+
+1. Use exception to control logic
+
+* Hashtable
+
+1. A hashtable object has =__hash__()=
+2. All immutable built-in objects (numbers, strings, tuples) are hashtable
+3. No mutable containers are hashtable
+
+* Metaclass
+
+1. Class for managing class
+2. In Python, it is possible to create custom metaclass
