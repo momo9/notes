@@ -62,3 +62,17 @@ h2[:two] # "default"
 2. _default object of hash is the same object_
 3. default object can be a block
 
+* string
+
+#+begin_src ruby
+# "\"abc'"
+%{"abc'}
+%("abc')
+%!"abc'!
+#+end_src
+
+1. ~s += k~ will create a new =String= and assign to =s=
+2. ~s << k~ will modify =s=
+3. =String= in Ruby can be modified
+4. '\n' is \n, only \\ and \' will escape; "\n" is <return>
+5. ?a is character /a/ and equal to =String= 'a'
