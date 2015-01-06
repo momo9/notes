@@ -75,3 +75,7 @@ o = MyClass()
 
 1. Class for managing class
 2. In Python, it is possible to create custom metaclass
+
+-----
+
+EOF
