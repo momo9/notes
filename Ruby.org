@@ -76,3 +76,19 @@ h2[:two] # "default"
 3. =String= in Ruby can be modified
 4. '\n' is \n, only \\ and \' will escape; "\n" is <return>
 5. ?a is character /a/ and equal to =String= 'a'
+
+* symbol
+
+1. Symbols with the same name have the same id (they're the same object)
+2. Just _reference_ a symbol may create it
+3. /methods/, /constants/ are all symbols
+4. Symbol in string
+  #+begin_src ruby
+  sym = :a
+  s = "#{sym} and b" # "a and b", to_s will be used to symbol
+  #+end_src
+5. _Symbols are not immutable strings_
+
+* regular expression
+
+1. "string"[/pattern/] will return the matched string (=nil= when not matched)
