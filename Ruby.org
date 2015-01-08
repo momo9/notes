@@ -89,6 +89,60 @@ h2[:two] # "default"
   #+end_src
 5. _Symbols are not immutable strings_
 
-* regular expression
+* method
+
+#+begin_src ruby
+def myMethod
+  ...
+end
+
+# myMethod means the return value instead of the method
+
+private :myMethod
+#+end_src
+
+* constant
+
+#+begin_src ruby
+C = 1
+
+class A
+  C = 2
+  def c
+    C      # 2
+    A::C   # 2
+    ::A::C # 2
+    ::C    # 1
+  end
+end
+
+class B
+  C = 3
+  class BA < A
+    def c
+      C # 3, constants in the lexical scope has precedence over constants from the inheritance hierarchy
+    end
+  end
+end
+
+class B::BB < A
+  def c
+    C # 2, constants from the inheritance hierarchy has precedence this time
+  end
+end
+#+end_src
+
+* loop
+
+1. =break= can return value
+
+#+begin_src ruby
+10.times do
+  ... # 10 times
+end
+#+end_src
+
+* other
 
 1. "string"[/pattern/] will return the matched string (=nil= when not matched)
+2. use =eval cmd= to execute =cmd= (a string)
