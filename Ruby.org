@@ -142,7 +142,56 @@ end
 end
 #+end_src
 
+* exception
+
+1. =fail=: raise a =RuntimeError=
+2. =raise <exception>=
+
+#+begin_src ruby
+begin # try
+  ...
+rescue Exception => ex # catch
+  ...
+ensure # finally
+  ...
+end
+#+end_src
+
+* block
+
+#+begin_src ruby
+def foo
+  yield
+end
+
+foo { 1 + 2 } # 3, yield will be replaced by code in {}
+
+def bar
+  yield 'foo'
+end
+
+bar { |x| x } # 'foo', yield with argument
+
+def que
+  if block_given?
+    yield
+  else
+    :no_block
+  end
+end
+
+que { :block } # :block
+que            # :no_block
+
+
+up = lambda { |n| n.upcase }
+up['h'] # 'H', call block explicitly
+bar &up # 'FOO', use block as argument
+
+#+end_src
+
 * other
 
 1. "string"[/pattern/] will return the matched string (=nil= when not matched)
 2. use =eval cmd= to execute =cmd= (a string)
+3. =nil= and =false= are treated as =false=
