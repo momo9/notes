@@ -190,6 +190,12 @@ bar &up # 'FOO', use block as argument
 
 #+end_src
 
+* class
+
+1. =self= refers to the object when in method
+2. method in a module _can_ be overrided in class
+3. class names are constants (varibles starting with upper characters)
+
 * other
 
 1. "string"[/pattern/] will return the matched string (=nil= when not matched)
