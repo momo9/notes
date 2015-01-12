@@ -196,6 +196,16 @@ bar &up # 'FOO', use block as argument
 2. method in a module _can_ be overrided in class
 3. class names are constants (varibles starting with upper characters)
 
+* message passing (reflect)
+
+#+begin_src ruby
+obj.send(:method_name)
+obj.respond_to?(:method_name)
+#+end_src
+
+1. if =method_missing= is overrided (normal behavior is raising =NoMethodError=), all =NoMethodError= will call this method
+2. however, =respond_to?= return false when 1 happens
+
 * other
 
 1. "string"[/pattern/] will return the matched string (=nil= when not matched)
