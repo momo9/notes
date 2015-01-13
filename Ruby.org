@@ -211,3 +211,4 @@ obj.respond_to?(:method_name)
 1. "string"[/pattern/] will return the matched string (=nil= when not matched)
 2. use =eval cmd= to execute =cmd= (a string)
 3. =nil= and =false= are treated as =false=
+4. class with =to_str= will be treated as =String=
