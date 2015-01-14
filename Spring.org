@@ -1,0 +1,22 @@
+* 处理流程
+
+- web.xml中，映射一个 =DispatcherServlet= ，假设名字为 =ctrl=
+- 建一个 =ctrl-servlet.xml= ，对 =ctrl= 进行配置
+- 配置好 =<mvc:annotation-driven/>= ，就会自动去找 =@Controller=
+- controller 里再根据 url 等进行处理
+
+* REST
+
+_在 url 中反映出请求的内容_
+
+- level 0：只有一个 url，请求内容都在报文中
+- level 1：不同的服务在不同的 url 中，但相关参数在报文中
+- level 2：服务与参数都在报文中
+- level 3：请求与 level 2 一样，但响应中包括了可能需要访问的 url，用户完全不需要知道服务的结构是怎样的
+
+* annotation
+
+- 在 spring 中，主要是代替配置
+- =@RequestBody= 主要处理 =application/json= 与 =application/xml=
+
+
