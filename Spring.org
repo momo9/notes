@@ -2,8 +2,8 @@
 
 - web.xml中，映射一个 =DispatcherServlet= ，假设名字为 =ctrl=
 - 建一个 =ctrl-servlet.xml= ，对 =ctrl= 进行配置
-- 配置好 =<mvc:annotation-driven/>= ，就会自动去找 =@Controller=
-- controller 里再根据 url 等进行处理
+- 配置好 =<mvc:annotation-driven/>= ，就会自动去找 =@Controller= （可以有多个）
+- controller 里再根据 url 等进行处理，可以直接返回 POJO （简单的 Bean），默认转换为 JSON
 
 * REST
 
