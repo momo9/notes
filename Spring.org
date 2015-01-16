@@ -18,5 +18,14 @@ _在 url 中反映出请求的内容_
 
 - 在 spring 中，主要是代替配置
 - =@RequestBody= 主要处理 =application/json= 与 =application/xml=
+- 用 =@ResponseStatus= 标注异常，当异常发生时就会抛出相应的状态码（如 404）
 
+* 单元测试
 
+- spring 的单元测试可以模拟 HTTP 请求，并测试状态码
+- spring 使用 =HttpMessageConverter= 在 POJO 与 JSON 间转换
+
+* @Autowired（初步理解）
+
+- 标注方法或是构造器：作为 setter、getter 使用
+- 标注字段：去某些作用域中寻找该字段对应的对象（只能是单例）
