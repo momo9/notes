@@ -49,7 +49,7 @@ _在 url 中反映出请求的内容，或者说建立 url 与后端 method 的�
 - spring 的单元测试可以模拟 HTTP 请求，并测试状态码
 - spring 使用 =HttpMessageConverter= 在 POJO 与 JSON 间转换
 
-* @Autowired（初步理解）
+* @Autowired
 
 - 标注方法或是构造器：作为 setter、getter 使用
 - 标注字段：去某些作用域中寻找该字段对应的对象（只能是单例）
@@ -57,3 +57,10 @@ _在 url 中反映出请求的内容，或者说建立 url 与后端 method 的�
 * 依赖注入
 
 或者叫控制反转。在原本的过程中，如果 A 依赖 B，就必须得先定义好 B。现在是 A 依赖一个 B 的接口，具体什么是 B 是不清楚的。到 B 建立的时候，再把自己注入进去，实现了依赖的反转。
+
+=ApplicationContext= 就是生成 bean 的工厂。
+
+** constructor-based or setter-based
+
+- mandatory: constructor-based
+- optional: setter-based
