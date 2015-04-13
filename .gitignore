@@ -2,3 +2,7 @@
 *~
 *#
 *.html
+
+.DS_Store
+
+_book/
