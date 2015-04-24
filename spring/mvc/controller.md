@@ -6,3 +6,12 @@
 - controller 里再根据 url 等进行处理
 	- 可以是服务，直接返回 POJO （简单的 Bean），被封装为 json、xml 等形式
     - 可以修改 model，传递给 view 显示（通过返回字符串确定具体的 view）
+    
+## DispatcherServlet 的处理过程
+
+* `WebApplicationContext`
+* locale resolver (optional)
+* theme resolver (optional)
+* multipart file resolver (about update, optional)
+* search for **handler** (by `HandlerMapping`)
+* if a *model* is returned, render the view
