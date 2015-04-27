@@ -12,4 +12,5 @@
 
 * 根据 HandlerMapping 来确定 url 会映射到哪个类（handler）及拦截器，handler 可以是任意 bean，因此类型是 Object
 * 根据 HandlerAdapter 来确定具体的 method
+* 对于基于 spring 注解的 HandlerMapping，handler 为 HandlerMethod
 
