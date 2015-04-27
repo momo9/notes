@@ -1,5 +1,6 @@
 # Controller
 
+* `rails generate controller`
 * `app/controllers` 下的类是 controller
 * controller 类中的方法是 action，用 `controller#acttion` 来表示
 * 可用 `rails generate controller` 生成

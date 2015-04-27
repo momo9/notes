@@ -5,6 +5,8 @@
 * 用 `link_to` 来指定超链接
 * 删除时的确认是加在 view 上的，通过 JS 实现
 * `_` 开头的 erb 文件是 partial 文件，可以在其它 erb 文件中 render
+	* 单纯地被 include
+	* 可迭代使用
 
 ## form_for
 

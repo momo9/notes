@@ -6,6 +6,15 @@
 
 		params.require(:product).permit(:field1, :field2)
 
+## 一对多关系
+
+以一个 article 有多个 comment 为例。
+
+* article 的 model 类中：`has_many`
+	* 如果删除一个 article 要删除对应的 comment，需要加入 `dependent: :destroy`
+* article 的 resource 中：增加 comment 的 resource
+* resource 的 model 类中：`belongs_to`
+
 ## validation
 
 * 在 model 中调用 `validates` 方法
