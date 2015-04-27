@@ -10,8 +10,6 @@
 
 ## 流程
 
-### url 处理流程
-
-* 根据 url 找到 class（Controller，也叫 handler）
+* 根据 HandlerMapping 来确定 url 会映射到哪个类（handler）及拦截器，handler 可以是任意 bean，因此类型是 Object
 * 根据 HandlerAdapter 来确定具体的 method
 
